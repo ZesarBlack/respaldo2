@@ -25,7 +25,6 @@
 																						<div class="box-header">
 																							<h3 class="box-title">Información de usuario</h3>
 																						</div><!-- /.box-header -->
-														<div id="notificacion_resul_fanu"></div>
 
 																<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 																<div class="box-body col-xs-12">

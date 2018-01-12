@@ -13,7 +13,8 @@ class ComentarioController extends Controller
      */
     public function index()
     {
-        //
+      $comentarios = Comentario::paginate();
+      return View('lista_issues', compact('comentarios'));
     }
 
     /**
@@ -37,7 +38,7 @@ class ComentarioController extends Controller
       $comentario =$request->all();
 //---------------------------------creacion de usuario
       Comentario::create($comentario);
-      return redirect()->to('home');
+      return redirect()->to('lista_proyecto_issue');
     }
 
     /**

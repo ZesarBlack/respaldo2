@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -21,6 +22,8 @@ class UserController extends Controller
     {
       $users = User::paginate();
       return View('lista_usuarios', compact('users'));
+
+
     }
 
     /**

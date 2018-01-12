@@ -17,6 +17,9 @@ class TablaIssue extends Migration
         {
           $table->increments('id');
           $table->string('titulo');
+          $table->string('detalle');
+          $table->integer('urgencia');
+          $table->integer('impacto');
           $table->string('editor');
           $table->date('fentrega');
           $table->timestamps();

@@ -10,4 +10,9 @@ class Proyecto extends Model
       'nombre',
       'fentrega',
     ];
+
+    public function issue()
+  {
+    return $this->hasMany('App\Issue', 'proy_id', 'id');
+  }
 }

@@ -27,7 +27,7 @@
 														<th>titulo</th>
 														<th>editor</th>
 														<th>fecha de entrega</th>
-														<th>identificador de procto</th>
+														<th>ID de proyecto</th>
 													</tr>
 													</thead>
 													<?php foreach ($issues as $issue): ?>
@@ -48,7 +48,7 @@
 														</tr>
 													</tbody>
 													<?php endforeach; ?>
-													</table>
+											</table>
                     </div>
                     <!-- /.box-body -->
                 </div>

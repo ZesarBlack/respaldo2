@@ -24,34 +24,51 @@
 											<table class="table table-bordered table-inverse">
 													<thead>
 													<tr>
-														<th>id</th>
-														<th>titulo</th>
+														<th>Titulo</th>
 														<th>editor</th>
 														<th>fecha de entrega</th>
+														<th>id issue</th>
+														<th>id Proyecto</th>
 													</tr>
 													</thead>
 													<?php foreach ($issues as $issue): ?>
 													<tbody>
 														<tr>
-															<td>{{ $issue->id }}</td>
-															<td>{{ $issue->titulo }}</td>
+															<td>
+															<a href="{{ route('listar.listar_m', [$issue->proy_id,$issue->id])}}"><i class="fa fa-wrench" ></i>&nbsp;&nbsp;<?=$issue->titulo;?></a>
+															</td>
 															<td>{{ $issue->editor }}</td>
 															<td>{{ $issue->fentrega }}</td>
+															<td>{{ $issue->id }}</td>
+															<td>{{ $issue->proy_id }}</td>
 															<td>
-																<td>
-																	{!! Form::open(['route' => ['agregar.agregar_c', $issue], 'method' => 'GET'])!!}
-																		 <button type="submit" class="btn btn-warning" >agregar comentario</button>
-																	{{ Form::close() }}
-																</td>
-														 </td>
+																<a href="{{ route('agregar.agregar_c', $issue->id)}}" class="fa  fa-plus">&nbsp;&nbsp;agregar comentario</a>
+															</td>
 														</tr>
 													</tbody>
 													<?php endforeach; ?>
-													</table>
+											</table>
                     </div>
+										<div class="box box-primary col-xs-12">
+											<table class="table table-bordered table-inverse">
+													<thead>
+													<tr>
+														<th>comentario</th>
+													</tr>
+													</thead>
+													<?php foreach ($comentarios as $comentario): ?>
+													<tbody>
+														<tr>
+															<td>{{ $comentario->comentario }}</td>
+															<td>
+															</td>
+														</tr>
+													</tbody>
+													<?php endforeach; ?>
+											</table>
+										</div>
                     <!-- /.box-body -->
                 </div>
-
 
 			</div>
 		</div>

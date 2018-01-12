@@ -13,6 +13,9 @@
 													<textarea rows="4" cols="50" type="text" class="form-control" id="comentario" name="comentario" placeholder="Detalles especificos" value="{{ old('comentario') }}" p required >
 													</textarea>
 		</div>
+    <div class="form-group col-xs-8">
+                          <input type="hidden" class="form-control" id="issue_id" name="issue_id" placeholder="id del issue" value="{{($issue->id)}}" p required  readonly>
+    </div>
 </div>
 <div class="box-footer col-xs-12 ">
 	<button type="submit" class="btn btn-primary">Guardar</button>

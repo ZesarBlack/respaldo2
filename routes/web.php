@@ -17,11 +17,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
-  Route::group(['middleware' => 'auth'], function () {
-
-  });
-
   Route::group(['middleware' => 'acces'], function () {
+
     Route::get('/crear_proyecto', function () {
         return view('crear_proyecto');
     });
@@ -40,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     {
       return view('issue_comentario');
     });
+
   });
     Route::name('lista_usuarios.edit')
         ->get('lista_usuarios/{lista_usuarios}/edit', 'UserController@edit')
@@ -49,7 +47,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('lista_issues','IssueController');
     Route::resource('lista_proyectos','ProyectController');
     Route::resource('comentarios','ComentarioController');
+    Route::name('listar.listar_i')->get('home','IssueController@issues');
+    Route::name('listar.listar_m')->get('listar_multiple/{proy_id}/{id}','ProyectController@multi_select');
     Route::name('agregar.agregar_i')->get('agregar_issue/{id}/agregar','ProyectController@agregar_i');
     Route::name('agregar.agregar_c')->get('agregar_comentario/{id}/agregar','IssueController@agregar_c');
-    Route::name('seleccionar.seleccionar_i')->get('seleccionar_issues/{id}/seleccionar','IssueController@seleccionar_i');
+    Route::name('seleccionar.seleccionar_i')->get('seleccionar_issues/{id}/seleccionar','ProyectController@seleccionar_i');
+    Route::name('seleccionar.seleccionar_c')->get('seleccionar_comentario/{id}/seleccionar','IssueController@seleccionar_c');
+    Route::name('nuevo_issue')->get('crear_issue','ProyectController@select_pr');
 });

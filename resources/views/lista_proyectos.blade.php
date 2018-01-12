@@ -41,6 +41,9 @@
 																		{!! Form::open(['route' => ['agregar.agregar_i', $proyecto], 'method' => 'GET'])!!}
 																			 <button type="submit" class="btn btn-warning" >agregar issue</button>
 																		{{ Form::close() }}
+																		{!! Form::open(['route' => ['seleccionar.seleccionar_i', $proyecto], 'method' => 'GET'])!!}
+																			 <button type="submit" class="btn btn-info" >información</button>
+																		{{ Form::close() }}
 																	</td>
 															</tr>
 														</tbody>

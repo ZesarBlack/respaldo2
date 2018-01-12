@@ -12,9 +12,9 @@
 
 				<div class="box box-success box-solid">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Example box</h3>
+                        <h3 class="box-title">Lista de comentarios</h3>
                         <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+
                             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         </div>
                         <!-- /.box-tools -->
@@ -24,34 +24,22 @@
 											<table class="table table-bordered table-inverse">
 													<thead>
 													<tr>
-														<th>id</th>
-														<th>titulo</th>
-														<th>editor</th>
-														<th>fecha de entrega</th>
+														<th>comentario</th>
 													</tr>
 													</thead>
-													<?php foreach ($issues as $issue): ?>
+													<?php foreach ($comentarios as $comentario): ?>
 													<tbody>
 														<tr>
-															<td>{{ $issue->id }}</td>
-															<td>{{ $issue->titulo }}</td>
-															<td>{{ $issue->editor }}</td>
-															<td>{{ $issue->fentrega }}</td>
+															<td>{{ $comentario->comentario }}</td>
 															<td>
-																<td>
-																	{!! Form::open(['route' => ['agregar.agregar_c', $issue], 'method' => 'GET'])!!}
-																		 <button type="submit" class="btn btn-warning" >agregar comentario</button>
-																	{{ Form::close() }}
-																</td>
-														 </td>
+															</td>
 														</tr>
 													</tbody>
 													<?php endforeach; ?>
-													</table>
+											</table>
                     </div>
                     <!-- /.box-body -->
                 </div>
-
 
 			</div>
 		</div>

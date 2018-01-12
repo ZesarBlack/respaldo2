@@ -1,0 +1,23 @@
+
+      $users = DB::table('users')->paginate(15);
+      return view('lista_usuarios', ['users' => $users]);
+
+
+<table class="table table-bordered table-inverse">
+												  <thead>
+												    <tr>
+												      <th>id</th>
+												      <th>Username</th>
+															<th>email</th>
+												    </tr>
+												  </thead>
+													@foreach ($users as $user)
+														<tbody>
+													    <tr>
+																<td>{{ $user->id }}</td>
+													      <td>{{ $user->name }}</td>
+													      <td>{{ $user->email}}</td>
+													    </tr>
+													  </tbody>
+													@endforeach
+												</table>

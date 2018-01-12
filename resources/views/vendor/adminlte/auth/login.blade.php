@@ -29,7 +29,7 @@
         <login-form name="{{ config('auth.providers.users.field','email') }}"
                     domain="{{ config('auth.defaults.domain','') }}"></login-form>
 
-
+        <a href="{{ url('/register') }}" class="text-center">¡No tengo cuenta !</a>
     </div>
     </div>
     </div>
